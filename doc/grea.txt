@@ -1,0 +1,48 @@
+*grea.txt*				Asynchronous external grep executor
+
+Author:  Alisue <lambdalisue@hashnote.net>
+Support: Vim 8.0.0107 and above
+Support: Neovim 0.2.0 and above
+License: MIT license
+
+
+=============================================================================
+INTRODUCTION					*grea-introduction*
+
+grea is an asynchronous extrenal grep executor which respects Vim's grep
+behavior, it uses 'grepprg' and 'grepformat' like |:grep| itself.
+
+
+=============================================================================
+USAGE						*grea-usage*
+								*:Grea*
+:Grea[!] [arguments]
+	Just like ":grep", but use job to execute the external program and
+	register the results to quickfix when the program terminate.
+
+								*:Greal*
+:Greal[!] [arguments]
+	Same as ":Grea", except the location list for the current window is
+	used instead of the quickfix list.
+
+								*:GreaAdd*
+:Grea[!] [arguments]
+	Just like ":Grea", but instead of making a new list of erros the
+	matches are appended to the current list.
+
+								*:GrealAdd*
+:GrealAdd[!] [arguments]
+	Same as ":GreaAdd", except the location list for the current window is
+	used instead of the quickfix list.
+
+
+=============================================================================
+TODO								*grea-todo*
+
+- Use location list for a window which was a current window when user invoked
+  the command instead of a current window.
+- Respect 'grepformat' instead of 'errorformat' if available
+
+
+=============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
